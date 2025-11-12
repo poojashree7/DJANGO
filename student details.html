@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input required type="text" minlength="3" maxlength="10"  name="sname" placeholder="enter student name"> <br>
+        <input type="email" name="semail" placeholder="enter student email">
+        <br>
+        <input type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[A-Za-z0-9])(?!.*\s).{8,20}$" name="psword" placeholder="enter your password"><br>
+        DOB:<input type="date" name="dob"> <br>
+        Salary<input type="number" min="10000" max="70000" name="sal"> <br>
+        Check in time<input type="time" name="intime"> <br>
+        <textarea name="add" cols="30" rows="3" placeholder="Address"></textarea> <br>
+        Department: <select name="dept">
+            <option value="none">----select department----</option>
+            <option value="CS with AI">Computer Science with AI</option>
+            <option value="bsc DS"> Data Science</option>
+            <option value="bsc ML"> Machine Learning</option>
+            <option value="bsc CS">Computer Science</option>
+        </select> <br>
+        Gender: <input type="radio" name="gender" value="M"> male
+        <input type="radio" name="gender" value="F"> female <br>
+        <input type="checkbox" name="elective" value="python"> python programming <br>
+        <input type="checkbox" name="elective" value="AI"> artificial intelligence <br>
+        <input type="checkbox" name="elective" value="DS"> data science <br>
+        <input type="checkbox" name="elective" value="ML"> machine learning <br>
+        <input type="submit" value="SAVE">
+        <input type="reset" value="clear all">
+    </form>
+</body>
+</html>
