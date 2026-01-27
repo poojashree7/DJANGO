@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Registry</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #b11226;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(233, 123, 137, 0.85), rgba(177, 18, 38, 0.85)),
+                url('file:///C:/Users/Ibscai32.DGVC-MCA/New%20folder25/25E5832/b.jpg') center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            height: 650px;
+        }
+
+        .hero h1 {
+            font-weight: 600;
+        }
+
+        /* Section spacing */
+        section {
+            padding: 60px 0;
+        }
+
+        /* Cards */
+        .feature-card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #b11226;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Blood Registry</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find Donor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="" alt="">
+            <h1>Donate <span style="color: red;">BLOOD</span>, Save Lives</h1>
+            <p class="mt-3">
+                A trusted platform connecting blood donors with those in need.
+            <p>
+                Your one step can give someone a second chance at life.
+            </p>
+            <a href="BLOOD DONAR.html" class="btn btn-light mt-4 px-4 py-2">Become a Donor</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color: #b11226;">Our Services</h2>
+                <p class="text-muted">Making blood donation easy and accessible</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card p-4 text-center">
+                        <h5 class="fw-bold" style="color: #b11226;">Donor Registration</h5>
+                        <p class="text-muted">
+                            Register as a blood donor and help patients during emergencies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card p-4 text-center">
+                        <h5 class="fw-bold" style="color: #b11226;">Search Blood Donors</h5>
+                        <p class="text-muted">
+                            Easily find nearby donors based on blood group and location.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card p-4 text-center">
+                        <h5 class="fw-bold" style="color: #b11226;">Emergency Support</h5>
+                        <p class="text-muted">
+                            life-saving blood during critical situations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold">About Blood Donor Registry</h2>
+                    <p class="text-muted mt-3">
+                        Blood Donor Registry is a social initiative aimed at saving lives
+                        by connecting voluntary blood donors with patients in need.
+                        We believe that no life should be lost due to lack of blood.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="c:\Users\Ibscai32.DGVC-MCA\New folder25\25E5832\b.webp" alt="Blood Donation"
+                        class="img-fluid" width="250">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">© 2026 Blood Donor Registry | Every Drop Counts</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
