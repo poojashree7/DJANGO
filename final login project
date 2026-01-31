@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Donor Registry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f6f7;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b30000;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #c4161c;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #a11318;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background-color: #c4161c;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .edit-btn {
+            background-color: #1f6feb;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>🩸 Blood Donor Registry</h1>
+<p>Save Lives – Become a Donor</p>
+<!--row 2-scrolling text-->
+    <marquee behavior="" direction="" style="background-color: rgb(233, 139, 139);color: grey;">
+       <a class="mar" href="" style="font-size: 40px; font-style: oblique; font-family: fantasy;color: brown;">APOLLO HOSPITAL</a>
+    </marquee>
+    </div> 
+
+<div class="form-container" style="border: #a11318;padding-left: 80px;">
+    <form id="donorForm">
+        <input type="hidden" id="editIndex">
+
+        <label>Donor Name</label>
+        <input type="text" id="name" placeholder="Donor Name" required>
+
+        <label>Blood Group</label>
+        <select id="bloodGroup" required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+        </select>
+
+        <label>Age</label>
+        <input type="number" id="age" placeholder="Age" required>
+
+        <label>City</label>
+        <input type="text" id="city" placeholder="City" required>
+
+        <label>Contact Number</label>
+        <input type="text" id="contact" placeholder="Contact Number" required>
+
+        <button type="submit">Save Donor</button>
+    </form>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="donorTable"></tbody>
+</table>
+
+<script>
+    let donors = [];
+
+    document.getElementById("donorForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let donor = {
+            name: name.value,
+            blood: bloodGroup.value,
+            age: age.value,
+            city: city.value,
+            contact: contact.value
+        };
+
+        let index = editIndex.value;
+
+        if (index === "") {
+            donors.push(donor);
+        } else {
+            donors[index] = donor;
+            editIndex.value = "";
+        }
+
+        this.reset();
+        displayDonors();
+    });
+
+    function displayDonors() {
+        donorTable.innerHTML = "";
+        donors.forEach((d, i) => {
+            donorTable.innerHTML += `
+                <tr>
+                    <td>${d.name}</td>
+                    <td>${d.blood}</td>
+                    <td>${d.age}</td>
+                    <td>${d.city}</td>
+                    <td>${d.contact}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editDonor(${i})">Edit</button>
+                        <button class="delete-btn" onclick="deleteDonor(${i})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    function editDonor(i) {
+        let d = donors[i];
+        name.value = d.name;
+        bloodGroup.value = d.blood;
+        age.value = d.age;
+        city.value = d.city;
+        contact.value = d.contact;
+        editIndex.value = i;
+    }
+
+    function deleteDonor(i) {
+        donors.splice(i, 1);
+        displayDonors();
+    }
+</script>
+
+</body>
+</html>
